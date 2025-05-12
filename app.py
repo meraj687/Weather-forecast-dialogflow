@@ -108,7 +108,7 @@ if __name__ == "__main__":
 #
 #
 # def get_forecast(city, date_time_str):
-#     API_KEY = "35a9117dae7e5f9c21ff9e596bebfc11"
+#     API_KEY = "[API_KEY]"
 #     url = f"https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={API_KEY}&units=metric"
 #
 #     try:
