@@ -1,94 +1,3 @@
-# from flask import Flask
-# import requests
-#
-#
-# app = Flask(__name__)
-#
-# @app.route("/" )
-# def index():
-#     return "Hello"
-#
-#
-# if __name__ == "__main__":
-#     app.run(debug=True)
-#
-
-# from flask import Flask , request
-#
-#
-# app = Flask(__name__)
-#
-# @app.route("/" , methods = ["POST"] )
-# def index():
-#     data = request.get_json()
-#     print(data)
-#     return "Hello"
-#
-#
-# if __name__ == "__main__":
-#     app.run(debug=True)
-
-#------------------------------------------#
-
-# from flask import Flask, request, jsonify
-# import requests
-#
-# app = Flask(__name__)
-#
-# @app.route('/', methods=['POST'])
-# def webhook():
-#     data = request.get_json()
-#     print("Dialogflow Request:", data)
-#
-#     # Get parameters from Dialogflow
-#     city = data.get("queryResult", {}).get("parameters", {}).get("geo-city")
-#     date_time = data.get("queryResult", {}).get("parameters", {}).get("date-time")  # Optional
-#
-#     if not city:
-#         return jsonify({"fulfillmentText": "I didn't get the city. Please try again."})
-#
-#     # Fetch weather
-#     weather_info = get_weather(city)
-#
-#     if weather_info:
-#         response_text = (
-#             f"The weather in {city} is {weather_info['description']} "
-#             f"with a temperature of {weather_info['temp']}°C and the wind speed is {weather_info['speed']}."
-#         )
-#     else:
-#         response_text = "Sorry, the server is under maintenance. Try again later."
-#
-#     return jsonify({"fulfillmentText": response_text})
-#
-#
-# def get_weather(city):
-#     API_KEY = "35a9117dae7e5f9c21ff9e596bebfc11"
-#     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
-#
-#     try:
-#         response = requests.get(url)
-#         data = response.json()
-#
-#         if data.get("cod") != 200:
-#             print("API returned error:", data)
-#             return None
-#
-#         weather = {
-#             "description": data["weather"][0]["description"],
-#             "temp": data["main"]["temp"]
-#         }
-#         return weather
-#
-#     except Exception as e:
-#         print("Error fetching weather:", e)
-#         return None
-#
-#
-# if __name__ == "__main__":
-#     app.run(debug=True)
-
-#---------------------------------------------------#
-#PErfect running without error
 from flask import Flask, request, jsonify
 import requests
 
@@ -124,7 +33,7 @@ def webhook():
 
 
 def get_weather(city):
-    API_KEY = "35a9117dae7e5f9c21ff9e596bebfc11"
+    API_KEY = "[API_KEY]"
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
 
     try:
