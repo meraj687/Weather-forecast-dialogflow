@@ -23,12 +23,13 @@ This project is a weather chatbot that provides real-time weather and a 3-day fo
 - **OpenWeatherMap API:** Provides weather and forecast data.
 - **ngrok:** Exposes the local Flask server to the internet via HTTPS for Dialogflow fulfillment during development.
 - **Render.com:** Cloud platform for deploying the Flask app in production.
+- **Telegram Bot:** Users can also interact with the weather chatbot via Telegram using [@Weather_forcast_7054_bot](https://t.me/Weather_forcast_7054_bot).
 
 **Flow:**
-1. User sends a weather query to Dialogflow.
+1. User sends a weather query to Dialogflow or the Telegram bot.
 2. Dialogflow extracts the city and sends a POST request to the Flask webhook (ngrok HTTPS URL for local, Render.com URL for production).
 3. Flask fetches weather data from OpenWeatherMap and formats the response.
-4. Flask returns the response to Dialogflow, which delivers it to the user.
+4. Flask returns the response to Dialogflow, which delivers it to the user (or via Telegram).
 
 ---
 
@@ -106,6 +107,13 @@ Render.com is a cloud platform that makes it easy to deploy web services like Fl
    - You will get a public HTTPS URL (e.g., `https://your-app.onrender.com/`).
 6. **Update Dialogflow:**
    - Set your webhook URL in Dialogflow Fulfillment to the Render.com URL.
+
+---
+
+## Telegram Bot
+
+You can also use the weather chatbot on Telegram:  
+👉 [@Weather_forcast_7054_bot](https://t.me/Weather_forcast_7054_bot)
 
 ---
 
