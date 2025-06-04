@@ -4,8 +4,13 @@ from datetime import datetime, timedelta
 
 app = Flask(__name__)
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET' , 'POST'])
 def webhook():
+
+    if request.method == 'GET':
+        return "✅ Weather Webhook is running!", 200
+    
+    # Handle POST request from Dialogflow
     data = request.get_json()
     print("Dialogflow Request:", data)
 
